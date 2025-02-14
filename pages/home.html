@@ -1,0 +1,78 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home - SIC Intramurals</title>
+    <link rel="stylesheet" href="../assets/css/navbar.css">
+    <link rel="stylesheet" href="../assets/css/home_page.css">
+    <link rel="stylesheet" href="../assets/css/sidebar.css">
+    <link rel="stylesheet" href="../assets/css/footer.css">
+    <!-- <link rel="stylesheet" href="../assets/css/styles.css"> -->
+    <style>
+        
+
+        
+       
+
+        
+        
+        
+
+        
+
+        
+
+        
+    </style>
+</head>
+
+<body>
+    <div class="container sidebar-hide">
+        <header class="header">
+            
+            <div class="wrapper">
+                <nav>
+                    <!-- <button onclick="toggleSidebar()">Hide</button> -->
+                    <a href="../welcome_page.html" class="logo">SIC Intramurals 2025</a>
+                    <input type="checkbox" name="" id="toggle">
+                    <label for="toggle"><i class="material-icons">Menu</i></label>
+                    <div class="menu">
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#setup-profile">Events</a></li>
+                            <li><a href="#evaluation">Players</a></li>
+                            <li><a href="#help">Announcements</a></li>
+                            <li><a href="#logout">Contact us</a></li>
+                        </ul>
+                    </div>
+                </nav>
+        
+            </div>
+        </header>
+        <aside class="left-aside">Left Aside</aside>
+        <main class="main">Main Content</main>
+        <div class="low-content">Low Content</div>
+        <footer class="footer">Footer</footer>
+    </div>
+</body>
+
+<script>
+    function toggleSidebar() {
+        const container = document.querySelector('.container');
+        const sidebar = document.querySelector('.left-aside');
+        // Show sidebar
+        if (container.classList.contains('sidebar-hide')) {
+            container.classList.remove('sidebar-hide');
+            container.classList.add('sidebar-show');
+            sidebar.style.display = 'block'; // Make the sidebar visible
+        } else {
+            container.classList.remove('sidebar-show');
+            container.classList.add('sidebar-hide');
+            sidebar.style.display = 'none';
+            // sidebar.style.grid-area = 'left-aside';
+        }
+    }
+</script>
+
+</html>

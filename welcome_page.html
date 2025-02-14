@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIC Intramurals 2025 - Welcome</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/welcome_page.css">
+    <style>
+        
+
+    </style>
+</head>
+<body>
+
+    <div class="welcome_page">
+        <h2>Welcome to SIC Intramurals 2025!</h2>
+        <p>Stay updated on the latest events, schedules, and scores!</p>
+        <button id="continue" onclick="nextpage()">Continue</button>
+    </div>
+<script>
+    function nextpage(){
+        window.location.href = "pages/home.html";
+    }
+    
+    // Check if the user has visited before
+    if (!localStorage.getItem('hasVisited')) {
+        // If the user hasn't visited, show the welcome page
+        document.getElementById('welcomePage').style.display = 'block';
+
+        // Set the flag in localStorage to prevent showing again
+        localStorage.setItem('hasVisited', 'true');
+    } else {
+        // If the user has already visited, redirect to index.html
+        window.location.href = "pages/home.html";
+    }
+
+    // Function to go to the next page (index.html)
+    function nextpage() {
+        window.location.href = "pages/home.html"; // Redirect to index.html
+    }
+</script>
+</body>
+</html>

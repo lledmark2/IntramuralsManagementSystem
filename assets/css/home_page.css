@@ -1,0 +1,29 @@
+body{
+    font-family: Arial, sans-serif;
+    background: url('../images/background.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+/* Main Content */
+.main {
+    grid-area: main;
+    width: 100%;
+    /* background-color: yellow; */
+}
+/* End Main Content */
+
+/* Right Content */
+.right-aside {
+    grid-area: right-aside;
+    background-color: green;
+}
+/* End Right Content */
+
+/* Low Content */
+.low-content {
+    grid-area: low-content;
+    background-color: blueviolet;
+}
+/* End Low Content */

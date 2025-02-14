@@ -1,0 +1,41 @@
+/* Welcome Page Section */
+.welcome_page {
+    background: rgba(0, 0, 255, 0.3);
+    /* Blueish background with transparency */
+    backdrop-filter: blur(14px) saturate(160%);
+    color: white;
+    text-align: center;
+    padding: 90px 60px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 80%;
+    max-width: 500px;
+    /* Limit the width */
+}
+
+.welcome_page h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.welcome_page p {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+.welcome_page button {
+    background-color: blue;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.welcome_page button:hover {
+    background-color: navy;
+    /* Darken button on hover */
+}

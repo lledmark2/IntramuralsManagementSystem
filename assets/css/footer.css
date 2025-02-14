@@ -1,0 +1,6 @@
+/* Footer */
+.footer {
+    grid-area: footer;
+    background-color: orange;
+}
+/* End Footer */

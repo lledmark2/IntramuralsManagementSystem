@@ -1,0 +1,18 @@
+/* Global styles */
+body {
+    /* background-color: black; */
+    font-family: Arial, sans-serif;
+    background: url('../images/background.jpg');
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh; /* Ensure body takes full height of the viewport */
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    
+}
+

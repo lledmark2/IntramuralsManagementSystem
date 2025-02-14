@@ -1,7 +1,9 @@
 /* NavBar */
 .header {
     grid-area: header;
-    
+    position: sticky;
+    top: 10px;
+    z-index: 1000;
 
 }
 /* End Navbar */

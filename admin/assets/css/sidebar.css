@@ -1,0 +1,149 @@
+/* Menu Button Functions */
+/* Sidebar */
+.left-aside {
+    grid-area: left-aside;
+    /* Minimum width */
+    background-color: navy;
+    /* transition: width 5s ease; Add transition */
+    /* transition: width ease-in-out .3s; */
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    /* Fixed sidebar */
+    transition: width 0.5s ease ;
+
+
+}
+
+/* expanded sidebar */
+.sidebar-expand {
+    grid-template-columns: 250px 4fr;
+}
+
+.sidebar-expand .left-aside {
+    width: 250px;
+}
+.left-aside:hover{
+    width: 250px;
+}
+
+.sidebar {
+    width: 70px;
+    background-color: #2C3E50;
+    color: white;
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header {
+    /* padding: 10px; */
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    background-color: #34495E;
+    height: 50px;
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    padding-top: 10px;
+    margin: 0;
+    flex-grow: 1;
+}
+
+.sidebar-menu li {
+    padding: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    height: 50px;
+    /* Fix icon height */
+}
+
+.sidebar-menu li:hover {
+    background-color: #16A085;
+}
+
+.sidebar-menu i {
+    margin-right: 10px;
+    font-size: 20px;
+    /* Ensure consistent icon size */
+    flex-shrink: 0;
+    /* Prevent icon from shrinking */
+    width: 40px;
+    background-color: #16A085;
+    padding: 10px;
+    text-align: center;
+}
+
+.sidebar-menu .menu-text {
+    display: inline-block;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+    /* Prevent text wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* Adds ellipsis for long text */
+}
+
+
+@media (max-width: 768px) {
+    .sidebar {
+        width: 60px;
+    }
+
+    .sidebar-menu .menu-text {
+        display: none;
+    }
+
+    .sidebar-menu i {
+        margin: 0;
+        /* Remove margin when collapsed */
+        text-align: center;
+        /* Align icons in the center */
+    }
+
+    .main-content {
+        margin-left: 60px;
+    }
+}
+
+
+/* mobile view */
+@media (max-width: 678px) {
+    .ims_container {
+        grid-template-rows: 50px 1fr 50px 50px;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "main"
+            "low-content"
+            "footer";
+        padding: 10px;
+        /* Adjust padding for mobile view */
+    }
+
+    .left-aside {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        /* Hidden by default */
+        height: 100%;
+        width: 250px;
+        background-color: green;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+        transition: left 0.5s ease;
+        z-index: 1000;
+        /* Ensures it appears on top */
+    }
+
+    .sidebar-expand .left-aside {
+        left: 0;
+        /* Slide in */
+    }
+}

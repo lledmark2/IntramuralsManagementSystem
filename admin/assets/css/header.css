@@ -1,0 +1,31 @@
+/* NavBar */
+.header {
+    grid-area: header;
+    background-color: navy;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    transition: 3s;
+    /* justify-items: flex-start; */
+}
+
+.menu_button{
+    /* background-color: aqua; */
+    color: white;
+    font-size: xx-large;
+    padding-bottom: 2px;
+    cursor: pointer;
+}
+
+.site_name{
+    background-color: rebeccapurple;
+    width: 80%;
+}
+.header_button{
+    background-color: antiquewhite;
+}
+/* End Navbar */

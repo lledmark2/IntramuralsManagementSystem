@@ -1,31 +1,62 @@
 /* NavBar */
 .header {
     grid-area: header;
-    background-color: navy;
     position: sticky;
     top: 0;
     z-index: 2;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    transition: 3s;
+    background-color: white;
+    border-bottom-style: groove;
+    border-bottom-color: #2C3E50;
     /* justify-items: flex-start; */
 }
-
+.menu_button_container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    /* background-color: grey; */
+    padding: 5px;
+    margin-right: 10px;
+}
 .menu_button{
-    /* background-color: aqua; */
-    color: white;
+    all: unset;
+    color: #2C3E50;
     font-size: xx-large;
-    padding-bottom: 2px;
+    text-align: center;
+    padding-bottom: 5px;
     cursor: pointer;
 }
+.sidebar-expand .menu_button_container{
+    background-color: #2C3E50;
+    border-radius: 1%;
+}
+.sidebar-expand .menu_button_container .menu_button{
+    color: white;
+}
 
-.site_name{
+
+.center_header{
     background-color: rebeccapurple;
-    width: 80%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    align-content: center;
 }
 .header_button{
     background-color: antiquewhite;
+    margin-left: 10px;
 }
 /* End Navbar */
+
+/*SearchBar*/
+.header_search_bar{
+    
+}
+.header_search_bar input{
+    height: 30px;
+    border-color: #2C3E50;
+}

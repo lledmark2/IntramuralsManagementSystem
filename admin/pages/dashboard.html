@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="../assets/css/styles.css">
     <link rel="stylesheet" href="../assets/css/header.css">
     <link rel="stylesheet" href="../assets/css/sidebar.css">
+    <link rel="stylesheet" href="../assets/css/theme.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
 
     <!-- Include Font Awesome CDN in your HTML file -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -20,7 +24,7 @@
             width: 100%;
             height: 100vh;
             background-color: grey;
-            transition: all 3s ease;
+
         }
 
         /* End Main Content */
@@ -39,43 +43,135 @@
         }
 
         /* End Footer */
-
-
-
-
-
-
-
-        /* End Responsive Layout */
     </style>
 </head>
 
 <body>
-    <div class="ims_container">
+    <div class="ims_container sidebar-collapse">
         <header class="header">
-            <div class="menu_button" onclick="toggleSidebar()"> &#9776;
-
+            <div class="menu_button_container" onclick="toggleSidebar()">
+                <button class="menu_button">&#9776;</button>
             </div>
-            <div class="site_name">
-                <a href="">Welcome to Admin Dashboard</a>
+            <div class="center_header">
+                <div class="header_search_bar">
+                    <input type="text">
+                    <label for="">Search</label>
+                </div>
             </div>
             <div class="header_button">
                 Profile
             </div>
-
         </header>
-        <aside class="left-aside sidebar">
+        <aside class="left-aside sidebar t-style">
             <div class="sidebar-header">
                 <h4>Logo</h4>
             </div>
             <ul class="sidebar-menu">
-                <li><i class="item_icon fas fa-home"></i><span class="menu-text">Home</span></li>
-                <li><i class="item_icon fas fa-user"></i><span class="menu-text">Profile</span></li>
-                <li><i class="item_icon fas fa-cogs"></i><span class="menu-text">Settings</span></li>
-                <li><i class="item_icon fas fa-envelope"></i><span class="menu-text">Messages</span></li>
-                <li><i class="item_icon fas fa-sign-out-alt"></i><span class="menu-text">Logout</span></li>
+                <li>
+                    <div class="item_container">
+                        <i class="item_icon fas fa-home"></i>
+                        <span class="menu-text">Dashboard</span>
+                    </div>
+                </li>
+                <div class="sub-menu">
+                    <li>
+                        <div class="item_container">
+                            <i class="item_icon fas fa-cogs"></i>
+                            <span class="menu-text">Manage Teams<i class="fas fa-chevron-down submenu-icon"></i></span>
+                        </div>
+                    </li>
+                    <ul class="sub-menu-items">
+                        <li>
+                            <div class="item_container">
+                                <i class="item_icon fas fa-user"></i>
+                                <span class="menu-text">List of Teams</span>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="item_container">
+                                <i class="item_icon fas fa-user"></i>
+                                <span class="menu-text">Add Team</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sub-menu">
+                    <li>
+                        <div class="item_container">
+                            <i class="item_icon fas fa-cogs"></i>
+                            <span class="menu-text">Manage Teams<i class="fas fa-chevron-down submenu-icon"></i></span>
+                        </div>
+                    </li>
+                    <ul class="sub-menu-items">
+                        <li>
+                            <div class="item_container">
+                                <i class="item_icon fas fa-user"></i>
+                                <span class="menu-text">List of Teams</span>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="item_container">
+                                <i class="item_icon fas fa-user"></i>
+                                <span class="menu-text">Add Team</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sub-menu">
+                    <li>
+                        <div class="item_container">
+                            <i class="item_icon fas fa-cogs"></i>
+                            <span class="menu-text">Manage Teams<i class="fas fa-chevron-down submenu-icon"></i></span>
+                        </div>
+                    </li>
+                    <ul class="sub-menu-items">
+                        <li>
+                            <div class="item_container">
+                                <i class="item_icon fas fa-user"></i>
+                                <span class="menu-text">List of Teams</span>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="item_container">
+                                <i class="item_icon fas fa-user"></i>
+                                <span class="menu-text">Add Team</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sub-menu">
+                    <li>
+                        <div class="item_container">
+                            <i class="item_icon fas fa-cogs"></i>
+                            <span class="menu-text">Manage Teams<i class="fas fa-chevron-down submenu-icon"></i></span>
+                        </div>
+                    </li>
+                    <ul class="sub-menu-items">
+                        <li>
+                            <div class="item_container">
+                                <i class="item_icon fas fa-user"></i>
+                                <span class="menu-text">List of Teams</span>
+                            </div>
+                        </li>
+
+                        <li>
+                            <div class="item_container">
+                                <i class="item_icon fas fa-user"></i>
+                                <span class="menu-text">Add Team</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+               
             </ul>
         </aside>
+        <!-- Backdrop -->
+        <!-- Backdrop -->
+        <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
+
         <main class="main">Main Content
             <h4>Welcome to admin Dashboard</h4>
         </main>
@@ -87,8 +183,29 @@
 <script>
     function toggleSidebar() {
         const container = document.querySelector('.ims_container');
-        container.classList.toggle('sidebar-expand');
+
+        if (container.classList.contains('sidebar-expand')) {
+            // If sidebar is expanded, remove class to collapse it
+            container.classList.remove('sidebar-expand');
+            container.classList.add('sidebar-collapse');
+        } else if (container.classList.contains('sidebar-collapse')) {
+            // If sidebar is collapsed, add class to expand it
+            container.classList.remove('sidebar-collapse');
+            container.classList.add('sidebar-expand');
+        }
     }
+
+    // Toggle sub-menu visibility
+    // Toggle sub-menu visibility when clicked
+    const subMenus = document.querySelectorAll('.sub-menu');
+    subMenus.forEach(menu => {
+        menu.addEventListener('click', function () {
+            this.classList.toggle('active');
+        });
+        menu.addEventListener('mouseenter', function () {
+            this.classList.toggle('hover');
+        });
+    });
 </script>
 
 </html>

@@ -1,0 +1,240 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMS Dashboard</title>
+    <link rel="stylesheet" href="../assets2/css/styles.css">
+    <link rel="stylesheet" href="../assets2/css/theme.css">
+    <link rel="stylesheet" href="../assets2/css/header.css">
+    <link rel="stylesheet" href="../assets2/css/sidebar.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+
+    <!-- Include Font Awesome CDN in your HTML file -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+       
+        /* Main Content */
+        .main {
+            grid-area: main;
+            width: 100%;
+            height: 100vh;
+            background-color: grey;
+            
+            font-size: 30px;
+        }
+        .main h4{
+            
+        }
+
+        /* End Main Content */
+        /* Low Content */
+        .low-content {
+            grid-area: low-content;
+            transition: width 0.3s ease;
+        }
+
+        /* End Low Content */
+
+        /* Footer */
+        .footer {
+            grid-area: footer;
+            transition: width 0.3s ease;
+        }
+
+        /* End Footer */
+       
+    </style>
+</head>
+
+<body>
+    <div class="ims_container sidebar-expand">
+        <header class="header">
+
+            <div class="center_header">
+                <div class="header_search_bar">
+                    <input type="text">
+                    <label for="">Search</label>
+                </div>
+            </div>
+            <div class="header_button">
+                Profile
+            </div>
+        </header>
+        <aside class="left-aside sidebar t-style">
+            <div class="sidebar-header">
+
+                <h4 class="header_text">SPORTS+</h4>
+                <div class="menu_button_container" onclick="toggleSidebar()">
+                    <i class="fa-solid fa-bars-staggered" id="btn"></i>
+                    <!-- <button class="menu_button">&#9776;</button> -->
+                </div>
+            </div>
+            <ul class="sidebar-menu">
+                <li>
+                    <a href="" class="item_container">
+                        <i class="item_icon fas fa-home"></i>
+                        <span class="menu-text">Dashboard</span>
+                    </a>
+                </li>
+                <div class="sub-menu">
+                    <li>
+                        <div class="item_container">
+                            <i class="item_icon fas fa-user-friends"></i>
+                            <span class="menu-text">Manage Teams<i class="fas fa-chevron-down submenu-icon"></i></span>
+                        </div>
+                    </li>
+                    <ul class="sub-menu-items">
+                        <li>
+                            <a href="" class="item_container">
+                                <i class="item_icon fas fa-circle"></i>
+                                <span class="menu-text">Add Team</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="" class="item_container">
+                                <i class="item_icon fas fa-circle"></i>
+                                <span class="menu-text">List of Teams</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sub-menu">
+                    <li>
+                        <div class="item_container">
+                            <i class="item_icon fas fa-calendar-alt"></i>
+                            <span class="menu-text">Manage Events<i class="fas fa-chevron-down submenu-icon"></i></span>
+                        </div>
+                    </li>
+                    <ul class="sub-menu-items">
+                        <li>
+                            <a href="" class="item_container">
+                                <i class="item_icon fas fa-circle"></i>
+                                <span class="menu-text">Add Event</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="item_container">
+                                <i class="item_icon fas fa-circle"></i>
+                                <span class="menu-text">List of Event</span>
+                            </a>
+                        </li>
+                        <li>
+                            <div class="item_container">
+                                <i class="item_icon fas fa-circle"></i>
+                                <span class="menu-text">Event Schedule</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item_container">
+                                <i class="item_icon fas fa-circle"></i>
+                                <span class="menu-text">Game Brackets</span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="item_container">
+                                <i class="item_icon fas fa-circle"></i>
+                                <span class="menu-text">Set Event Rule</span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <li>
+                    <a class="item_container">
+                        <i class="item_icon fas fa-list"></i>
+                        <span class="menu-text">List of Players</span>
+                    </a>
+                </li>
+                <li>
+                    <div class="item_container">
+                        <i class="item_icon fas fa-bullhorn"></i>
+                        <span class="menu-text">Announcements</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="item_container">
+                        <i class="item_icon fas fa-award"></i>
+                        <span class="menu-text">Medal Tally</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="item_container">
+                        <i class="item_icon fas fa-sign-out-alt"></i>
+                        <span class="menu-text">Logout</span>
+                    </div>
+                </li>
+            </ul>
+        </aside>
+        <!-- Backdrop -->
+        <!-- Backdrop -->
+        <div class="sidebar-backdrop" id="sidebarBackdrop" onclick="toggleSidebar()"></div>
+
+        <main id="home-container" class="main">
+            <h4>Welcome to admin Dashboard</h4>
+        </main>
+
+        <div class="low-content">Low Content</div>
+        <footer class="footer">Footer</footer>
+    </div>
+</body>
+
+<script>
+    function toggleSidebar() {
+        const container = document.querySelector('.ims_container');
+
+        if (container.classList.contains('sidebar-expand')) {
+            // If sidebar is expanded, remove class to collapse it
+            container.classList.remove('sidebar-expand');
+            container.classList.add('sidebar-collapse');
+        } else if (container.classList.contains('sidebar-collapse')) {
+            // If sidebar is collapsed, add class to expand it
+            container.classList.remove('sidebar-collapse');
+            container.classList.add('sidebar-expand');
+        }
+    }
+
+    // Toggle sub-menu visibility
+    // Toggle sub-menu visibility when clicked
+    const subMenus = document.querySelectorAll('.sub-menu');
+    const subItems = document.querySelectorAll('.item_container');
+    subMenus.forEach(menu => {
+        menu.addEventListener('click', function () {
+            this.classList.toggle('active');
+            // subItems.style.position = "absolute";
+            // subItems.style.width = "220px";
+
+        });
+        menu.addEventListener('mouseenter', function () {
+            this.classList.toggle('hover');
+        });
+    });
+</script>
+<script>
+    function changeContent(page) {
+        const homeContainer = document.getElementById('home-container');
+
+        let content = '';
+
+        switch (page) {
+            case 'dashboard':
+                content = `<h2>Dashboard</h2><p>Welcome to the admin dashboard!</p>`;
+                break;
+            case 'manage-teams':
+                content = `<h2>Manage Teams</h2><p>Here you can add, edit, and remove teams.</p>`;
+                break;
+            case 'manage-events':
+                content = `<h2>Manage Events</h2><p>Schedule and organize events here.</p>`;
+                break;
+            default:
+                content = `<h2>Welcome</h2><p>Select an option from the sidebar.</p>`;
+        }
+
+        homeContainer.innerHTML = content;
+    }
+</script>
+
+
+</html>

@@ -9,11 +9,25 @@
     background: #fff;
     border-bottom: solid 2px var(--primary-color);
     /* justify-items: flex-start; */
-    padding: 10px;
+    padding: 5px;
 }
 
-
-
+.header .menu_button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    padding: 9px;
+    color: var(--primary-color);
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 5%;
+    display: none;
+}
+.header .menu_button:hover{
+    color: #fff;
+    background-color: var(--primary-color);
+}
 
 .center_header{
     flex: 1; /* Takes available space */

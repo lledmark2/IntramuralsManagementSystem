@@ -1,0 +1,42 @@
+/* NavBar */
+.header {
+    grid-area: header;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+    display: flex;
+    justify-content: space-between;
+    background: #fff;
+    border-bottom: solid 2px var(--primary-color);
+    /* justify-items: flex-start; */
+    padding: 10px;
+}
+
+
+
+
+.center_header{
+    flex: 1; /* Takes available space */
+    display: flex;
+    justify-content: right; /* Centers horizontally */
+}
+.header_button{
+    background-color: antiquewhite;
+    margin-left: 10px;
+}
+/* End Navbar */
+
+/*SearchBar*/
+.header_search_bar{
+    display: flex;
+    align-items: center; /* Centers input and label vertically */
+    gap: 5px; /* Adds spacing between input and label */
+}
+.header_search_bar input{
+    border: solid 1px var(--primary-color);
+    height: 28px;
+}
+.header_search_bar label{
+    font-size: 20px;
+    font-weight: 400;
+}

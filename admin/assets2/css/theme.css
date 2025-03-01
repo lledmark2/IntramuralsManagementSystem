@@ -1,0 +1,20 @@
+
+
+:root {
+   /* Default Theme (Light Theme) */
+  --main-font: 'Oswald', sans-serif;
+  --light-bg-color: #fff;
+  --dark-bg-color: #121212;
+  --primary-color: #000080;
+  --accent-color: #FFDF00;
+
+  /* sidebar components light theme */
+  --sidebar-light-bg-color:var(--light-bg-color);
+  --sidebar-dark-bg-color:var(--dark-bg-color);
+  --sidebar-header-bg-color:var(--accent-color);
+  --sidebar-items-font-color:var(--primary-color);
+
+  /* hover colors */
+  --hover-font-color:var(--light-bg-color);
+  --hover-bg-color:var(--primary-color)
+}

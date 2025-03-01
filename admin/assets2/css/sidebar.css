@@ -1,0 +1,315 @@
+/* Menu Button Functions */
+/* Sidebar */
+.left-aside {
+    grid-area: left-aside;
+
+    position: fixed;
+    top: 0;
+    z-index: 3;
+    /* Fixed sidebar */
+}
+
+/* expanded sidebar */
+.sidebar-expand {
+    grid-template-columns: 250px 4fr;
+}
+
+.sidebar-expand .left-aside {
+    width: 250px;
+    transition: width 0.5s ease;
+}
+.sidebar-collapse .item_container:hover{
+    width: 240px;
+    position: absolute;  
+}
+.sidebar-collapse .sub-menu:hover > li .item_container {
+    width: 240px;
+    position: absolute;
+}
+.sidebar-collapse .sub-menu:hover .sub-menu-items .item_container {
+    width: 240px;
+    position: absolute;
+}
+.sidebar-collapse .sub-menu:hover  .submenu-icon{
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+.sidebar-collapse .sub-menu-items .item_container:hover {
+    width: auto; /* Reset width */
+    position: relative; 
+    /* Normal behavior */
+}
+.sidebar-collapse .left-aside .sidebar-menu li:hover .submenu-icon{
+    opacity: 1;
+    transition: opacity 1s ease;
+}
+/* collapse sidebar */
+.sidebar-collapse{
+    grid-template-columns: 70px 4fr;
+}
+.sidebar-collapse .left-aside{
+    width: 70px;
+    transition: width 0.5s ease;
+}
+.sidebar{
+    width: 70px;
+    background-color: var(--sidebar-light-bg-color);
+    color: var(--sidebar-items-font-color);
+    height: 100vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar-header {
+    color: #fff;
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    width: 100%;
+    height: 50px;
+    transition: width .3s ease;
+    border-bottom: solid 1px #fff;
+    background: var(--primary-color);
+}
+.sidebar-collapse .header_text {
+    display: none;
+}
+.sidebar-expand .menu_button_container{
+    font-size: 24px;
+    transform: rotate(180deg); /* Centers the arrow */
+}
+.sidebar-collapse .menu_button_container{
+    padding: 17px;
+    font-size: 24px;
+}
+/* Logo Text */
+.sidebar-expand .header_text {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+/* Hide the logo when sidebar is collapsed */
+
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    /* flex-grow: 1; */
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+.sidebar-menu::-webkit-scrollbar {
+    width: 8px; /* Adjust width */
+}
+
+.sidebar-menu::-webkit-scrollbar-thumb {
+    background: #2C3E50; /* Scrollbar handle color */
+    border-radius: 10px; /* Rounded edges */
+}
+
+.sidebar-menu::-webkit-scrollbar-thumb:hover {
+    background: rgb(1, 1, 45); /* Darker color on hover */
+}
+
+.sidebar-menu::-webkit-scrollbar-track {
+    background: white; /* Scrollbar track color */
+}
+/*sub-menu*/
+.sub-menu-items{
+    display: none
+}
+.active .item_container{
+    background-color: var(--hover-bg-color);
+    color: var(--hover-font-color);
+    border-bottom: solid 1px #fff;
+}
+.sub-menu .sub-menu-items .item_container{
+    background-color: var(--sidebar-light-bg-color);
+    color: var(--sidebar-items-font-color);
+}
+.sidebar-menu .sub-menu-items{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    flex-grow: 1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    
+}
+.sub-menu li .sub-menu-items li{
+    padding-right: 20px; /* Space for the arrow */
+}
+.sub-menu .menu-text{
+    /* margin-right: auto; */
+}
+.submenu-icon{
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg); /* Centers the arrow */
+    transition: opacity 3s ease, transform .2s ease;
+}
+.sidebar-menu .active .submenu-icon{
+    transform: translateY(-50%) rotate(0deg);
+}
+.sidebar-collapse .submenu-icon{
+    /* display: none; */
+    opacity: 0;
+    transition: none;
+}
+.sidebar .active{
+    background-color: var(--hover-bg-color);
+}
+.sidebar .active .sub-menu-items{
+    display: block;
+    z-index: 1000;
+    border-bottom: solid 1px var(--hover-bg-color);
+}
+
+.sidebar-menu li { 
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease;
+    height: 50px;
+    /* Fix icon height */
+}
+.sidebar-menu li .item_container{
+    position: relative;
+    padding: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    transition: width .3s ease;
+    color: unset;
+}
+
+
+.sidebar-menu li .item_container:hover {
+    background-color: var(--hover-bg-color);
+    color: var(--hover-font-color);
+}
+.sidebar-menu li .item_container:hover .item_icon ,
+.sidebar-menu li .item_container:hover .menu-text {
+    color: var(--hover-font-color);
+}
+.sidebar-menu .item_icon {
+    margin-right: 10px;
+    font-size: 20px;
+    /* Ensure consistent icon size */
+    flex-shrink: 0;
+    /* Prevent icon from shrinking */
+    width: 40px;
+    /* background-color: #16A085; */
+    padding: 10px;
+    text-align: center;
+}
+
+.active .item_container .item_icon ,
+.active .item_container .menu-text{
+    color: #fff;
+}
+.active .sub-menu-items .item_icon{
+    font-size: 10px;
+    color: var(--primary-color);
+}
+.active .sub-menu-items .menu-text{
+    color: var(--primary-color);
+}
+
+.sidebar-menu .menu-text {
+    display: inline-block;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+    /* Prevent text wrapping */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    
+    /* Adds ellipsis for long text */
+}
+
+@media (max-width: 768px) {
+
+}
+/* Disable Transition When Resizing */
+/* @media (max-width: 679px){
+    .left-aside{
+        transition: none;
+    }
+} */
+/* mobile view */
+@media (max-width: 678px) {
+    .ims_container {
+        display: grid;
+        grid-template-rows: 50px 1fr 50px 50px;
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "main"
+            "low-content"
+            "footer";
+        height: 100vh;
+        /* Full height */
+        
+    }
+
+    /* Sidebar */
+    .left-aside {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        /* transition: none; */
+        /* Hidden by default */
+        height: 100%;
+        width: 250px;
+        background-color: green;
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.3);
+        /* transition: left 0.5s ease; */
+        z-index: 1050;
+        /* Higher than overlay */
+    }
+
+    /* Transparent Background Overlay */
+    /* Backdrop */
+    .sidebar-backdrop {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: 1040;
+        opacity: 0;
+        visibility: hidden;
+        transition: opacity 5s ease;
+    }
+
+
+    /* Show Backdrop */
+    .sidebar-expand .sidebar-backdrop {
+        opacity: 1;
+        visibility: visible;
+        transition: opacity 2s ease;
+    }
+    /* Show Sidebar & Backdrop */
+    .sidebar-expand .sidebar {
+        left: 0;
+        transition: left 1s ease;
+    }
+    .sidebar-collapse .sidebar{
+        left: -100%;
+        transition: left 3s ease;
+    }
+    /* Show Backdrop */
+    .sidebar-collapse .sidebar-backdrop{
+        opacity: 0;
+        transition: opacity 2s ease;
+    }
+    
+}
